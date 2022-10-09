@@ -1,0 +1,100 @@
+
+.main_menu {
+
+
+    background-color: #282c34;
+    height: 690px;
+    width: 1470px;
+    border-radius: 10px;
+    border: solid 4px midnightblue;
+    margin: 7px;
+
+
+}
+
+.headText {
+    text-align: center;
+    font-family: "Arial Black";
+
+}
+
+.pText {
+    font-size: 15px;
+    transition: color 0.50s, text-shadow 0.45s;
+}
+
+.pText:hover {
+    color: snow;
+    background-color: grey;
+    cursor: pointer;
+    opacity: 2;
+    box-shadow: 5px 5px 5px black;
+
+
+
+}
+
+.headCustom:hover {
+
+    color: snow;
+    background-color: grey;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+
+}
+
+.headCustom {
+
+    height: 100px;
+    width: auto;
+    background-color: dimgray;
+    border: solid 3px black;
+    margin: 20px;
+    border-radius: 6px;
+    transition: color 0.5s, background-color 0.40s, text-shadow 0.45s;
+
+
+
+
+}
+
+.keeper{
+
+    height: 480px;
+    width: 1360px;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 850px 300px;
+
+
+
+}
+
+.imageSelect{
+
+
+    background: gray;
+    height: 300px;
+    width: 500px;
+    margin-top: 50px;
+    border: solid 2px black;
+    border-radius: 4px;
+
+}
+
+.button{
+
+    height: 50px;
+    width: 150px;
+    margin: 50px;
+    margin-left: 850px;
+
+
+}
+
+.button:hover{
+
+
+}
+
+
