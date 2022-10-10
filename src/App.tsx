@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {PureComponent, useState} from 'react';
 import './Style.css';
 import ReactDOM from "react-dom/client";
 
@@ -8,33 +8,22 @@ class MyApp extends PureComponent {
     changeHeadText = () => {
 
         // @ts-ignore
-        document.getElementById("htext").innerHTML = "Yapay Zekâ";
+        document.getElementById("htext").innerHTML = "Hello World!";
 
     }
 
-    changeParagText = () => {
-
-
-        // @ts-ignore
-        document.getElementById("text").innerText = "Yapay zekâ kavramının geçmişi modern bilgisayar bilimi kadar eskidir. Fikir babası, Makineler düşünebilir mi? sorunsalını ortaya atarak makine zekâsını tartışmaya açan Alan Mathison Turing'dir. 1943'te II. Dünya Savaşı sırasında Kripto analizi gereksinimleri ile üretilen elektromekanik cihazlar sayesinde bilgisayar bilimi ve yapay zekâ kavramları doğmuştur.";
-
-    }
 
     backToDefault = () => {
 
+
         // @ts-ignore
         document.getElementById("htext").innerHTML = "New Title";
-        // @ts-ignore
-       document.getElementById("text").innerHTML = "new description";
-
     }
 
 
     render() {
 
-        // @ts-ignore
-        const root = ReactDOM.createRoot(document.getElementById('root')); // Aynı  aşağının kopyasını yapıştır en üste paragraf yerine inputlar ekle o inputların datasını al en altta ki p ve h ye buton araçıyla yapıştır
-        //root.render(<h1>Hello, world!</h1>);  bu kodu boş bi projede test et
+
         return (
 
             <div className="main_menu">
@@ -58,14 +47,24 @@ class MyApp extends PureComponent {
                         marginTop: 40,
                         border: "solid",
                         borderRadius: 30,
-                    }} onClick={this.changeParagText}>
-                        <p id="text" style={{textAlign: "center", fontFamily: "cursive", margin: 10}}><strong>new
-                            description</strong></p>
+                    }}>
 
+                        <form>
+                           <textarea id="ptext" className="description" required placeholder="new description"></textarea>
+                        </form>
 
                     </div>
 
-                    <div className="imageSelect"></div>
+                    <div className="imageSection" >
+
+                        <div  className="image">
+
+                            <label className="imageSelecter" htmlFor="imgs">Click to Select an image</label>
+
+                        </div>
+                        <input className="input" id="imgs" type="file"/>
+
+                    </div>
 
                     <button className="button" onClick={this.backToDefault}>Kaydet</button>
 
