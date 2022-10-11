@@ -3,7 +3,7 @@
 
 
     background-color: #282c34;
-    height: 690px;
+    height: 1410px;
     width: 1470px;
     border-radius: 10px;
     border: solid 4px midnightblue;
@@ -38,6 +38,7 @@
 
 }
 
+
 .headCustom {
 
     height: 100px;
@@ -52,6 +53,7 @@
 }
 
 .keeper {
+
 
     height: 480px;
     width: 1360px;
@@ -134,11 +136,20 @@
     font-size: 19px;
     font-family: cursive;
     margin: 130px;
+    cursor: pointer;
 
 }
 
 .image{
     display: inline-block
+
+}
+.line{
+
+    height: 5px;
+    width: auto;
+    background-color: white;
+
 
 }
 

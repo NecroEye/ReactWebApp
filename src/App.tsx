@@ -1,6 +1,6 @@
-import React, {PureComponent, useState} from 'react';
+import React, {PureComponent} from 'react';
 import './Style.css';
-import Icon from '@mui/material/Icon';
+import UploadImage from "./UploadImage";
 
 class MyApp extends PureComponent {
 
@@ -15,7 +15,6 @@ class MyApp extends PureComponent {
 
     backToDefault = () => {
 
-
         // @ts-ignore
         document.getElementById("htext").innerHTML = "New Title";
     }
@@ -23,6 +22,9 @@ class MyApp extends PureComponent {
 
     render() {
 
+
+        // @ts-ignore
+        const {data} = this.props;
 
         return (
 
@@ -50,18 +52,21 @@ class MyApp extends PureComponent {
                     }}>
 
                         <form>
-                           <textarea id="ptext" className="description" required placeholder="new description"></textarea>
+                            <textarea id="ptext" className="description" required
+                                      placeholder="new description"></textarea>
                         </form>
 
                     </div>
 
-                    <div className="imageSection" >
-                        <div  className="image">
+                    <div className="imageSection">
+                        <div className="image">
 
                             <label className="imageSelecter" htmlFor="imgs">Click to Select an image</label>
 
                         </div>
-                        <input className="input" id="imgs" type="file"/>
+
+
+                        <UploadImage/>
 
                     </div>
 
@@ -69,6 +74,52 @@ class MyApp extends PureComponent {
 
 
                 </div>
+
+
+                <div className="line"/>
+
+
+
+
+
+                <div className="headCustom" onClick={this.changeHeadText}>
+
+
+
+                </div>
+
+
+                <div className="keeper">
+
+                    <div className="pText" style={{
+                        alignItems: 'start',
+                        width: 600,
+                        height: 250,
+                        backgroundColor: 'gray',
+                        marginLeft: 40,
+                        marginTop: 40,
+                        border: "solid",
+                        borderRadius: 30,
+                    }}>
+
+                        //paragraf eklenecek
+
+                    </div>
+
+                    <div className="imageSection">
+                        <div className="image">
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
 
 
             </div>
