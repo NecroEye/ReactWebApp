@@ -1,6 +1,6 @@
 import React, {PureComponent, useState} from 'react';
 import './Style.css';
-import ReactDOM from "react-dom/client";
+import Icon from '@mui/material/Icon';
 
 class MyApp extends PureComponent {
 
@@ -56,7 +56,6 @@ class MyApp extends PureComponent {
                     </div>
 
                     <div className="imageSection" >
-
                         <div  className="image">
 
                             <label className="imageSelecter" htmlFor="imgs">Click to Select an image</label>
