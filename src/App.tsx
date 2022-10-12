@@ -1,6 +1,5 @@
 import React from 'react';
 import './Style.css';
-import UploadImage from "./UploadImage";
 import Icon from './AddIcon';
 import db from "./firebase";
 import defaultImage from './default-placeholder.png';
@@ -18,15 +17,11 @@ class MyApp extends React.Component {
             realText: "",
             image: "",
             show: false,
-
-
-
         }
     }
 
-    // image visiblty
     // photo format
-    // photo delete and clone
+    //  clone
 
     // @ts-ignore
     getText = (e) => {
@@ -49,7 +44,7 @@ class MyApp extends React.Component {
         this.setState({text: ""});
         // @ts-ignore
         this.setState({realText: this.state.text});
-
+        this.setState({show:false})
 
     }
     // @ts-ignore
@@ -127,14 +122,15 @@ class MyApp extends React.Component {
                     <div className="imageSection">
                         <div className="image">
 
-                            <label className="imageSelecter" htmlFor="imgs">Click to Select an image</label>
+                            {
+                                show ? null : <label className="imageSelecter" htmlFor="imgs">Click to Select an image</label>
+                            }
 
 
                             {
-
                              show ? <img className="photo" src={image} id="lastImage"  alt="pickedImage"/> : null
-
                             }
+
                         </div>
 
 
@@ -165,7 +161,6 @@ class MyApp extends React.Component {
 
 
                 <div className="keeper">
-
                     <div className="pText" style={{
                         alignItems: 'start',
                         width: 600,
