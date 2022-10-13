@@ -51,6 +51,15 @@
 
 
 }
+.headCustomclone{
+    height: 100px;
+    width: auto;
+    background-color: dimgray;
+    border: solid 3px black;
+    margin: 20px;
+    border-radius: 6px;
+
+}
 
 .keeper {
 

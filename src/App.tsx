@@ -1,9 +1,10 @@
 import React from 'react';
 import './Style.css';
-import Switch from '@mui/material/Switch';
 import db from "./firebase";
-import defaultImage from './default-placeholder.png';
-import {FormControlLabel, FormGroup} from '@mui/material';
+// @ts-ignore
+import AddIcon from "./AddIcon";
+
+
 
 
 //const ref = db.firestore().collection()
@@ -18,6 +19,7 @@ class MyApp extends React.Component {
             realText: "",
             image: "",
             show: false,
+            show2: false,
         }
     }
 
@@ -46,6 +48,7 @@ class MyApp extends React.Component {
         // @ts-ignore
         this.setState({realText: this.state.text});
         this.setState({show: false})
+        this.setState({show2: true})
 
 
     }
@@ -66,6 +69,7 @@ class MyApp extends React.Component {
                 this.setState({image: reader.result})
                 // @ts-ignore
                 this.setState({show: true});
+                this.setState({show2:false})
 
             }
 
@@ -83,9 +87,10 @@ class MyApp extends React.Component {
         const {realText} = this.state;
         // @ts-ignore
         const {image} = this.state;
+        // @ts-ignore
+        const {show2} = this.state;
 
         return (
-
             <div className="main_menu">
 
 
@@ -120,9 +125,9 @@ class MyApp extends React.Component {
                             ></textarea>
                         </form>
 
-                        <FormGroup>
-                            <FormControlLabel style={{marginTop:40}} control={<Switch defaultChecked />} label="NightMode" />
-                        </FormGroup>
+
+                        <AddIcon/>
+
 
                     </div>
 
@@ -164,7 +169,7 @@ class MyApp extends React.Component {
                 <div className="line"/>
 
 
-                <div className="headCustom" onClick={this.changeHeadText}>
+                <div className="headCustomclone" onClick={this.changeHeadText}>
 
                     <h1 className="headText" id='htextc'></h1>
 
@@ -172,7 +177,7 @@ class MyApp extends React.Component {
 
 
                 <div className="keeper">
-                    <div className="pText" style={{
+                    <div className="pTextclone" style={{
                         alignItems: 'start',
                         width: 600,
                         height: 250,
@@ -194,7 +199,11 @@ class MyApp extends React.Component {
                     <div className="imageSection">
                         <div className="image">
 
-                              <img src={image} className="photo" alt="img"/>
+
+                            {
+                                show2 ?  <img src={image} className="photo" alt="img"/> : null
+
+                            }
 
 
                         </div>
