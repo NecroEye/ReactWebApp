@@ -1,8 +1,9 @@
 import React from 'react';
 import './Style.css';
-import Icon from './AddIcon';
+import Switch from '@mui/material/Switch';
 import db from "./firebase";
 import defaultImage from './default-placeholder.png';
+import {FormControlLabel, FormGroup} from '@mui/material';
 
 
 //const ref = db.firestore().collection()
@@ -21,7 +22,7 @@ class MyApp extends React.Component {
     }
 
     // photo format
-    //  clone
+    //  clone image
 
     // @ts-ignore
     getText = (e) => {
@@ -44,7 +45,8 @@ class MyApp extends React.Component {
         this.setState({text: ""});
         // @ts-ignore
         this.setState({realText: this.state.text});
-        this.setState({show:false})
+        this.setState({show: false})
+
 
     }
     // @ts-ignore
@@ -63,7 +65,7 @@ class MyApp extends React.Component {
             } else if (reader.readyState === 2) {
                 this.setState({image: reader.result})
                 // @ts-ignore
-                this.setState({show:true});
+                this.setState({show: true});
 
             }
 
@@ -74,7 +76,7 @@ class MyApp extends React.Component {
 
     render() {
         // @ts-ignore
-        const {show,setShow} = this.state;
+        const {show} = this.state;
         // @ts-ignore
         const {text} = this.state;
         // @ts-ignore
@@ -95,6 +97,7 @@ class MyApp extends React.Component {
 
 
                 <div className="keeper">
+
 
                     <div className="pText" style={{
                         alignItems: 'start',
@@ -117,10 +120,16 @@ class MyApp extends React.Component {
                             ></textarea>
                         </form>
 
+                        <FormGroup>
+                            <FormControlLabel style={{marginTop:40}} control={<Switch defaultChecked />} label="NightMode" />
+                        </FormGroup>
+
                     </div>
+
 
                     <div className="imageSection">
                         <div className="image">
+
 
                             {
                                 show ? null : <label className="imageSelecter" htmlFor="imgs">Click to Select an image</label>
@@ -128,10 +137,12 @@ class MyApp extends React.Component {
 
 
                             {
-                             show ? <img className="photo" src={image} id="lastImage"  alt="pickedImage"/> : null
+                                show ? <img className="photo" src={image} id="lastImage" alt="pickedImage"/> : null
                             }
 
                         </div>
+
+
 
 
                         <input type="file"
@@ -182,6 +193,8 @@ class MyApp extends React.Component {
 
                     <div className="imageSection">
                         <div className="image">
+
+                              <img src={image} className="photo" alt="img"/>
 
 
                         </div>
