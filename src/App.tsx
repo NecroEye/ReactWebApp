@@ -1,11 +1,12 @@
 import React from 'react';
 import './Style.css';
+// @ts-ignore
 import db from "./firebase";
 // @ts-ignore
 import AddIcon from "./AddIcon";
 
 
-//const ref = db.firestore().collection()
+
 
 class MyApp extends React.Component {
 
@@ -49,6 +50,18 @@ class MyApp extends React.Component {
         this.setState({show2: true})
 
 
+
+        db.collection("data").add({
+            // @ts-ignore
+            text: this.state.text,
+            // @ts-ignore
+            image: this.state.image,
+
+
+
+        });
+
+
     }
     // @ts-ignore
     imageLoad = (event) => {
@@ -75,7 +88,6 @@ class MyApp extends React.Component {
         }
         reader.readAsDataURL(event.target.files[0]);
     }
-
     render() {
         // @ts-ignore
         const {show} = this.state;
