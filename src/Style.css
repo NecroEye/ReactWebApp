@@ -143,9 +143,15 @@
     color: darkgreen;
     font-size: 19px;
     font-family: cursive;
-    margin: 130px;
+    margin: 20px;
+    margin-left: 90px;
     cursor: pointer;
+    transition: all 0.45s;
 
+}
+.imageSelecter:hover{
+
+    color: greenyellow;
 }
 
 .image {

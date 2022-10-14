@@ -5,8 +5,6 @@ import db from "./firebase";
 import AddIcon from "./AddIcon";
 
 
-
-
 //const ref = db.firestore().collection()
 
 class MyApp extends React.Component {
@@ -23,8 +21,8 @@ class MyApp extends React.Component {
         }
     }
 
-    // photo format
-    //  clone image
+
+    Dimg = require('./proje_2.png');
 
     // @ts-ignore
     getText = (e) => {
@@ -137,7 +135,7 @@ class MyApp extends React.Component {
 
 
                             {
-                                show ? null : <label className="imageSelecter" htmlFor="imgs">Click to Select an image</label>
+                                show ? null : <label className="imageSelecter" htmlFor="imgs">Click here in order to select an image</label>
                             }
 
 
@@ -219,4 +217,3 @@ class MyApp extends React.Component {
 }
 
 export default MyApp;
-
