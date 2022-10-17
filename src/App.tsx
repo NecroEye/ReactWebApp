@@ -88,6 +88,7 @@ class MyApp extends React.Component {
         }
         reader.readAsDataURL(event.target.files[0]);
     }
+
     render() {
         // @ts-ignore
         const {show} = this.state;
