@@ -175,8 +175,7 @@
     object-fit:contain;
     vertical-align: baseline;
 
-    animation: jello 2s infinite;
-    transform-origin: center
+
 }
 
 @keyframes jello {
@@ -207,6 +206,18 @@
     100% {
         transform: none
     }
+}
+
+.photo:hover{
+    height: 240px;
+    width: 400px;
+    margin-left: 40px;
+    margin-top: 30px;
+    object-fit:contain;
+    vertical-align: baseline;
+
+    animation: jello 2s infinite;
+    transform-origin: center
 }
 
 
